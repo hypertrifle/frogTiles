@@ -46,6 +46,7 @@ class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::luxe::Game_obj{
 		bool inputDone;
 		int playerX;
 		bool timerRunning;
+		Float time;
 		virtual Dynamic config( Dynamic config);
 
 		virtual Void ready( );
@@ -53,14 +54,11 @@ class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::luxe::Game_obj{
 		virtual Void setup_events( );
 		Dynamic setup_events_dyn();
 
-		virtual Void on_game_fail( Dynamic e);
-		Dynamic on_game_fail_dyn();
-
-		virtual Void on_game_success( Dynamic e);
-		Dynamic on_game_success_dyn();
-
 		virtual Void setup_input( );
 		Dynamic setup_input_dyn();
+
+		virtual Void finish_game( bool won);
+		Dynamic finish_game_dyn();
 
 		virtual Void onkeyup( Dynamic e);
 

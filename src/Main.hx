@@ -23,6 +23,7 @@ class Main extends luxe.Game {
     public var playerX:Int = 2;
 
     public var timerRunning:Bool = false;
+    public var time:Float = 0;
 
     override function config(config:luxe.AppConfig) {
 
@@ -56,18 +57,16 @@ class Main extends luxe.Game {
 
 
     function setup_events() {
-        Luxe.events.listen( 'game.fail', on_game_fail );
-        Luxe.events.listen( 'game.success', on_game_success );
+        Luxe.events.listen( 'game.fail.*', function(e) {
+            trace("fail game");
+            finish_game(false);
+            });
+        Luxe.events.listen( 'game.success.*', function(e) {
+            trace("win game");
+            finish_game(true);
+            });
     }
 
-
-    function on_game_fail(e:Dynamic) {
-        trace("fail game");
-    }
-
-    function on_game_success(e:Dynamic) {
-        trace("win game");
-    }
 
 
     function setup_input() {
@@ -79,7 +78,18 @@ class Main extends luxe.Game {
 
     }
 
+    function finish_game(won:Bool){
+        timerRunning = false;
+
+        var final_time = Math.floor(time * 100)/100;
+
+        var final_string = (won)? "You Won! time: "+ final_time : "You Lost! time: "+final_time;
+        trace(final_string);
+
+    }
+
     override function onkeyup( e:KeyEvent ) {
+
 
         if(e.keycode == Key.escape) {
             Luxe.shutdown();
@@ -90,11 +100,19 @@ class Main extends luxe.Game {
     override function update(dt:Float) {
 
         update_input(dt);
+
+        if(timerRunning){
+            time += dt;
+        }
     	
     } //update
 
 
     function update_input(dt:Float) {
+
+        if(!timerRunning && (Luxe.input.inputdown('left') || Luxe.input.inputdown('right'))){
+            timerRunning = true;
+        }
 
         if(Luxe.input.inputdown('left') && Luxe.input.inputdown('right') && !inputDone){
             trace("Jump Clicked");

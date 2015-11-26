@@ -6,9 +6,6 @@
 #ifndef INCLUDED_components_LevelModel
 #include <components/LevelModel.h>
 #endif
-#ifndef INCLUDED_haxe_Log
-#include <haxe/Log.h>
-#endif
 #ifndef INCLUDED_luxe_Component
 #include <luxe/Component.h>
 #endif
@@ -117,14 +114,10 @@ int playerX = __o_playerX.Default(2);
 			Dynamic tmp4 = _Function_2_1::Block();		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(51)
 			tmp3->fire(HX_HCSTRING("game.fail.toofar","\xd7","\x26","\x66","\xb9"),tmp4,null());
-			HX_STACK_LINE(52)
-			Dynamic tmp5 = hx::SourceInfo(HX_HCSTRING("LevelModel.hx","\x39","\x54","\x14","\x8e"),52,HX_HCSTRING("components.LevelModel","\xfd","\x1f","\x31","\xc8"),HX_HCSTRING("step","\x4c","\xe7","\x5b","\x4c"));		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(52)
-			::haxe::Log_obj::trace(HX_HCSTRING("cant jump that far!","\x4d","\xc1","\x46","\x9d"),tmp5);
 			HX_STACK_LINE(53)
-			bool tmp6 = safe;		HX_STACK_VAR(tmp6,"tmp6");
+			bool tmp5 = safe;		HX_STACK_VAR(tmp5,"tmp5");
 			HX_STACK_LINE(53)
-			return tmp6;
+			return tmp5;
 		}
 		HX_STACK_LINE(58)
 		{

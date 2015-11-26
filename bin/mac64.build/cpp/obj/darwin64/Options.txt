@@ -1,4 +1,0 @@
-hxcpp=1
-hxcpp_api_level=321
-hxcpp_static_std=1
-hxcpp=/Users/rich/haxelib/hxcpp/3,2,193/

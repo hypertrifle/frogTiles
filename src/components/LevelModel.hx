@@ -49,7 +49,7 @@ class LevelModel extends Component {
         if(amount >= level.length){
             // fire jumped off end of level envent
             Luxe.events.fire('game.fail.toofar',{});
-            trace("cant jump that far!");
+            //trace("cant jump that far!");
             return safe;
 
         }

@@ -2389,7 +2389,6 @@
   <file name="src/components/LevelModel.cpp">
    <depend name="include/Luxe.h"/>
    <depend name="include/components/LevelModel.h"/>
-   <depend name="include/haxe/Log.h"/>
    <depend name="include/luxe/Component.h"/>
    <depend name="include/luxe/Events.h"/>
    <depend name="include/luxe/ID.h"/>
