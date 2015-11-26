@@ -1,0 +1,36 @@
+{
+
+  luxe:{
+    window: {
+      width:380,
+      height:640,
+      title:'luxe empty project',
+      fullscreen:false,
+      resizable:true,
+      borderless:false
+    }
+  },
+
+  project : {
+    name : 'FrogTiles',
+    version : '1.0.0',
+    author : 'Rich Searle',
+
+    app : {
+      name : 'frogtiles',
+      package : 'com.richsearle.frogtiles'
+    },
+
+    build : {
+      dependencies : {
+        luxe : '*',
+      }
+    },
+
+    files : {
+      assets : 'assets/'
+    }
+
+  }
+
+}
