@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="7" height="20" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="64" tilecount="8">
+  <image source="mapSprites.png" width="512" height="64"/>
+ </tileset>
+ <layer name="visualfg" width="7" height="20">
+  <data encoding="csv">
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,5,0,0,
+0,0,2,2,2,2,1,
+2,2,2,1,1,2,2,
+1,2,1,2,2,1,2,
+2,1,2,2,2,2,2,
+2,2,1,2,1,2,2,
+2,2,2,2,2,2,2,
+2,2,1,2,2,1,2,
+2,2,2,2,2,2,2,
+1,2,2,2,1,2,2,
+2,2,6,2,2,2,2
+</data>
+ </layer>
+</map>

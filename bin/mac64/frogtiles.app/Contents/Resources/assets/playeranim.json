@@ -1,8 +1,0 @@
-{
-    "aim" : {
-        "frame_size":{ "x":"132", "y":"139" },
-        "frameset": ["7"],
-        "loop": "false",
-        "speed": "8"
-    }
-}
