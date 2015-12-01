@@ -4,6 +4,102 @@
 		"selected_items":
 		[
 			[
+				"touchRight",
+				"touchRightID"
+			],
+			[
+				"wi",
+				"p· width	Int"
+			],
+			[
+				"levl",
+				"levelDisplay"
+			],
+			[
+				"p",
+				"m· pop	Null<Array<Int>>"
+			],
+			[
+				"ex",
+				"exitBlockId"
+			],
+			[
+				"lel",
+				"level_model"
+			],
+			[
+				"map",
+				"map"
+			],
+			[
+				"t",
+				"p· touchLeftID	Null<Int>"
+			],
+			[
+				"tile",
+				"p· tile_width	Int"
+			],
+			[
+				"touch",
+				"p· touchRight	Null<Bool>"
+			],
+			[
+				"mo",
+				"mobileInput"
+			],
+			[
+				"touc",
+				"touchLeftID"
+			],
+			[
+				"level",
+				"level_model"
+			],
+			[
+				"new",
+				"newModel"
+			],
+			[
+				"le",
+				"levelProgress"
+			],
+			[
+				"w",
+				"p· w	Float"
+			],
+			[
+				"total",
+				"p· total_width	Int"
+			],
+			[
+				"set",
+				"setup_debug_helpers"
+			],
+			[
+				"fina",
+				"final_string"
+			],
+			[
+				"pla",
+				"playerX"
+			],
+			[
+				"player",
+				"playerX"
+			],
+			[
+				"in",
+				"m· indexOf	Int"
+			],
+			[
+				"leve",
+				"levelGen"
+			],
+			[
+				"input",
+				"inputDone"
+			],
+			[
 				"OF_",
 				"OF_LOG_NOTICE"
 			],
@@ -80,10 +176,6 @@
 				"RectPhysics"
 			],
 			[
-				"pla",
-				"player"
-			],
-			[
 				"sha",
 				"shader"
 			],
@@ -144,10 +236,6 @@
 				"screen	luxe.Screen"
 			],
 			[
-				"p",
-				"pos	luxe.Vector"
-			],
-			[
 				"Input",
 				"InputManager	io"
 			],
@@ -158,10 +246,6 @@
 			[
 				"se",
 				"set_texture	function"
-			],
-			[
-				"player",
-				"player	var"
 			],
 			[
 				"M",
@@ -328,10 +412,6 @@
 				"pauseTimer"
 			],
 			[
-				"total",
-				"totalTime	var"
-			],
-			[
 				"prev",
 				"prevScore"
 			],
@@ -358,10 +438,6 @@
 			[
 				"_r",
 				"_roundsWon"
-			],
-			[
-				"set",
-				"setY( animOffset : Int )	Unknown<5>"
 			],
 			[
 				"Round",
@@ -436,89 +512,53 @@
 				"antialiasing"
 			],
 			[
-				"in",
-				"intro	var"
-			],
-			[
 				"Pos",
 				"Position	helpers"
-			],
-			[
-				"Position",
-				"Position	helpers"
-			],
-			[
-				"Plat",
-				"PlayerController	controllers"
-			],
-			[
-				"pl",
-				"playersToShuffle	var"
-			],
-			[
-				"get",
-				"getDarkened"
-			],
-			[
-				"stage",
-				"stageHeight	Int"
-			],
-			[
-				"tr",
-				"transition"
-			],
-			[
-				"shar",
-				"shareVideo"
-			],
-			[
-				"fil",
-				"filename"
-			],
-			[
-				"start",
-				"startTime"
-			],
-			[
-				"stop",
-				"stopRecording"
-			],
-			[
-				"post",
-				"postProcess"
-			],
-			[
-				"Play",
-				"PlayState	states"
-			],
-			[
-				"time",
-				"timeDisplay	var"
-			],
-			[
-				"_p",
-				"_position	var"
-			],
-			[
-				"Resul",
-				"ResultItem	display"
-			],
-			[
-				"Pla",
-				"PlayerController	controllers"
-			],
-			[
-				"Res",
-				"RelativeScaleMode	flixel.system.scaleModes"
-			],
-			[
-				"Arra",
-				"Array<T>	class"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "project.flow",
+			"settings":
+			{
+				"buffer_size": 480,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/Avatar.hx",
+			"settings":
+			{
+				"buffer_size": 459,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Main.hx",
+			"settings":
+			{
+				"buffer_size": 7956,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/LevelModel.hx",
+			"settings":
+			{
+				"buffer_size": 4648,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rich/Development/Luxe/fg/src/Main.hx",
+			"settings":
+			{
+				"buffer_size": 4896,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -681,10 +721,34 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/rich/Development/Luxe/frogTiles/proto"
+		"/Users/rich/Development/Luxe/frogTiles/proto",
+		"/Users/rich/Development/Luxe/frogTiles/proto/assets",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/components",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/entities",
+		"/Users/rich/Development/Luxe/fg",
+		"/Users/rich/Development/Luxe/fg/src",
+		"/Users/rich/Development/Luxe/fg/src/components",
+		"/Users/rich/Development/Luxe/fg/src/entities",
+		"/Users/rich/Development/Luxe/fg/src/states",
+		"/Users/rich/haxelib/luxe",
+		"/Users/rich/haxelib/luxe/git",
+		"/Users/rich/haxelib/luxe/git/luxe",
+		"/Users/rich/haxelib/luxe/git/luxe/importers",
+		"/Users/rich/haxelib/luxe/git/luxe/importers/tiled",
+		"/Users/rich/haxelib/luxe/git/luxe/tilemaps"
 	],
 	"file_history":
 	[
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/components/LevelModel.hx",
+		"/Users/rich/haxelib/luxe/git/luxe/Events.hx",
+		"/Users/rich/haxelib/luxe/git/luxe/options/TilemapOptions.hx",
+		"/Users/rich/haxelib/luxe/git/luxe/importers/tiled/TiledMap.hx",
+		"/Users/rich/haxelib/luxe/git/luxe/tilemaps/Tilemap.hx",
+		"/Users/rich/Development/Luxe/fg/src/components/MechAnimation.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/Main.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/Main.hx",
+		"/Users/rich/Development/Luxe/fg/src/Main.hx",
 		"/Users/rich/Development/OpenFramworks/apps/piApps/liveShader/src/FaceOverlay.h",
 		"/Users/rich/Development/OpenFramworks/apps/piApps/liveShader/bin/data/ShaderPlayground.frag",
 		"/Users/rich/Development/OpenFramworks/apps/piApps/liveShader/bin/data/MotionBlur_GLES.frag",
@@ -708,7 +772,6 @@
 		"/Users/rich/Desktop/Game-Dev-Test/DEVELOPMENT FILES/Working Code/src/game/States.js",
 		"/Users/rich/Development/Luxe/fg/assets/input.json",
 		"/Users/rich/Development/Luxe/fg/project.flow",
-		"/Users/rich/Development/Luxe/fg/src/Main.hx",
 		"/Users/rich/haxelib/luxe/git/phoenix/Shader.hx",
 		"/Users/rich/Development/Luxe/fg/src/geometry/StencilWriteGeometry.hx",
 		"/Users/rich/Development/Luxe/fg/src/states/MaskTestsState.hx",
@@ -731,7 +794,6 @@
 		"/Users/rich/haxelib/luxe/git/phoenix/Batcher.hx",
 		"/Users/rich/Development/Luxe/fg/src/components/SimpleGun.hx",
 		"/Users/rich/Development/Luxe/fg/src/Events.hx",
-		"/Users/rich/Development/Luxe/fg/src/components/MechAnimation.hx",
 		"/Users/rich/Development/Luxe/fg/src/states/PlayState.hx",
 		"/Users/rich/Development/Luxe/fg/src/entities/SightLight.hx",
 		"/Users/rich/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -805,18 +867,11 @@
 		"/Users/rich/haxelib/openfl-admob/1,3,4/dependencies/admobex/src/admobex/AdMobEx.java",
 		"/Users/rich/Development/Haxe/zenhotseat/Release/export/android/bin/AndroidManifest.xml",
 		"/Users/rich/Development/Haxe/zenhotseat/Release/source/states/SplashState.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/Modal.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/Timer.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/PlayerDeleteButton.hx",
-		"/Users/rich/haxelib/flixel/git/flixel/text/FlxText.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/assets/images/logo-square-trans-01.svg",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/CircleCounter.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/Fill.hx",
-		"/Users/rich/haxelib/flixel/3,3,7/flixel/text/FlxText.hx"
+		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/Modal.hx"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -840,6 +895,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"exitBlockId",
+			"mobileInput",
+			"fire(",
+			"levelModel",
+			"levelGen",
+			"tag_properties",
+			"fire",
 			"for",
 			"history",
 			"toConsole",
@@ -960,14 +1022,7 @@
 			"arra",
 			"FlxGraphicAsset",
 			"hideSystemUiCallback",
-			"Float",
-			"words",
-			"playWordSound",
-			"playw",
-			"playWordSound",
-			"handleNewWord",
-			"FlxG.mouse",
-			"_targetWord.addFormat"
+			"Float"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -975,6 +1030,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"model",
+			"level_model",
 			"prediction",
 			"println",
 			"FJ",
@@ -999,7 +1056,7 @@
 			"\",\n\"",
 			"FlxNapeSprite"
 		],
-		"reverse": true,
+		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -1008,8 +1065,193 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "project.flow",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								277
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/sublime_flow/flow-file.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/entities/Avatar.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								448,
+								448
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Main.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3824,
+								3824
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 7.0,
+						"translation.y": 4117.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/components/LevelModel.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4648,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1308,
+								1308
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"file": "assets/mapSprites.png",
+					"semi_transient": false,
+					"stack_index": 4,
+					"type": "image"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/rich/Development/Luxe/fg/src/Main.hx",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1173,
+								1213
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 684.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1046,7 +1288,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 143.0
+		"height": 96.0
 	},
 	"output.find_results":
 	{
@@ -1056,11 +1298,11 @@
 	{
 		"height": 98.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/sublime_flow/flow.sublime-build",
 	"project": "frogTilesPrototype.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":

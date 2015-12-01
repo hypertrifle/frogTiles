@@ -3,11 +3,17 @@ package components;
 import luxe.Component;
 import luxe.options.ComponentOptions;
 import luxe.importers.tiled.TiledMap;
+import luxe.tilemaps.Tilemap;
+
+typedef TileModel = {
+    @:optional var id:Int;
+    @:optional var visual:Tile;
+}
 
 
 class LevelModel extends Component {
 
-    var level:Array<Array<Int>>;
+    var level:Array<Array<TileModel>>;
     var levelDisplay:TiledMap;
 
     var safeTileIndexs:Array<Int>;
@@ -32,8 +38,17 @@ class LevelModel extends Component {
 
     }
 
-    public function getStartPosition() {
-        return level[0].indexOf(6);
+    public function getStartPosition():Int {
+        //return level[0].indexOf(6);
+
+        for(i in 0 ... level[0].length){
+            if(level[0][i].id == 6){
+                return i;
+            }
+        }
+
+        return -1;
+
     }
 
     override function update(dt:Float) {
@@ -45,15 +60,15 @@ class LevelModel extends Component {
         //save a reference so we can update tiles later
         levelDisplay = map;
 
-        level = new Array<Array<Int>>();
+        level = new Array<Array<TileModel>>();
         var start = false;
         for( layer in map ) {
             for( y in 0 ... map.height ) {
 
-                var row:Array<Int> = new Array<Int>();
+                var row:Array<TileModel> = new Array<TileModel>();
                 for( x in 0 ... map.width ) {
                     var tile = layer.tiles[y][x];
-                    row.push(tile.id);
+                    row.push({id: tile.id,visual:tile});
                     trace(tile.id);
                     if(tile.id == exitBlockId){
                         Luxe.events.fire("game.debug.endOfLevelFound",{x:x,y:y});
@@ -83,9 +98,18 @@ class LevelModel extends Component {
     function move_row_containing_id(id:Int, moveRight:Bool){
         
         for(i in 0 ... level.length){
-            if(level[i].indexOf(id) != -1){
+            var found = false;
+            for(j in 0...level[i].length){
+                if(level[i][j].id == id){
+                    found = true;
+                    break;
+                }
+
+            }
+
+            if(found){
                 //this row has a moving log sprite in it, lets shift the whole row right, wrapping around the world
-                Luxe.events.fire("game.model.moving-row",{i:i,j: level[i].indexOf(id)});
+                //Luxe.events.fire("game.model.moving-row",{i:i,j: level[i].indexOf(id)});
                 if(moveRight){
                     level[i].unshift(level[i].pop());
                 } else {
@@ -105,11 +129,13 @@ class LevelModel extends Component {
         for(i in 0 ... level.length){
             for(j in 0 ... levelDisplay.width){
 
+                trace(level[i][j].visual);
 
-                Luxe.events.fire("game.model.redraw-map:set-from-model",{i:i,j:j, x:j,y:i+currentProgress});
+                level[i][j].visual.pos.x = 40;
+                //Luxe.events.fire("game.model.redraw-map:set-from-model",{i:i,j:j, x:j,y:i+currentProgress});
 
-                var tile = levelDisplay.tile_at("visualfg",j,levelDisplay.height - i - currentProgress-1);
-                tile.id = level[i][j];
+                //var tile = levelDisplay.tile_at("visualfg",j,levelDisplay.height - i - currentProgress-1);
+                //tile.id = level[i][j].id;
 
 
 
@@ -142,14 +168,14 @@ class LevelModel extends Component {
 
         // on step we want to shift all items down the amount of rows the player has progressed;
         for (i in 0 ... amount) {
-            var prev:Array<Int> = level.shift();
+            var prev:Array<TileModel> = level.shift();
             currentProgress ++;
         }
 
         update_map_logic(amount);
 
 
-        if(safeTileIndexs.indexOf(level[0][playerX]) != -1){
+        if(safeTileIndexs.indexOf(level[0][playerX].id) != -1){
             //we good
             safe = true;
         } else {
@@ -158,7 +184,7 @@ class LevelModel extends Component {
         } 
 
         //check to see if out new player is on a safe tile
-        Luxe.events.fire("player.landed.tile", {tileID: level[0][playerX], safe: safe, levelLeft: level.length});
+        Luxe.events.fire("player.landed.tile", {tileID: level[0][playerX].id, safe: safe, levelLeft: level.length});
 
         if(!safe){
 
@@ -168,7 +194,7 @@ class LevelModel extends Component {
         } else {
 
             //good tile.
-            if(level[0][playerX] == exitBlockId){
+            if(level[0][playerX].id == exitBlockId){
                 Luxe.events.fire('game.success.hitExitTile',{});
             }
         }
