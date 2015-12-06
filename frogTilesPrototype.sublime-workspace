@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"vis",
+				"visual"
+			],
+			[
+				"T",
+				"TileModel"
+			],
+			[
+				"de",
+				"debug_events_to_ignore"
+			],
+			[
 				"touchRight",
 				"touchRightID"
 			],
@@ -502,18 +514,6 @@
 			[
 				"con",
 				"confimCallback	var"
-			],
-			[
-				"Zen",
-				"ZenButton	ui"
-			],
-			[
-				"an",
-				"antialiasing"
-			],
-			[
-				"Pos",
-				"Position	helpers"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "project.flow",
 			"settings":
 			{
-				"buffer_size": 480,
+				"buffer_size": 500,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "src/Main.hx",
 			"settings":
 			{
-				"buffer_size": 7956,
+				"buffer_size": 2496,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,15 +547,39 @@
 			"file": "src/components/LevelModel.hx",
 			"settings":
 			{
-				"buffer_size": 4648,
+				"buffer_size": 5266,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/rich/Development/Luxe/fg/src/Main.hx",
+			"file": "/Users/rich/haxelib/luxe/git/luxe/tilemaps/Tilemap.hx",
 			"settings":
 			{
-				"buffer_size": 4896,
+				"buffer_size": 26259,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/states/Mode1.hx",
+			"settings":
+			{
+				"buffer_size": 6888,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rich/haxelib/luxe/git/luxe/States.hx",
+			"settings":
+			{
+				"buffer_size": 17443,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/HUD.hx",
+			"settings":
+			{
+				"buffer_size": 1829,
 				"line_ending": "Unix"
 			}
 		}
@@ -722,10 +746,10 @@
 	"expanded_folders":
 	[
 		"/Users/rich/Development/Luxe/frogTiles/proto",
-		"/Users/rich/Development/Luxe/frogTiles/proto/assets",
 		"/Users/rich/Development/Luxe/frogTiles/proto/src",
 		"/Users/rich/Development/Luxe/frogTiles/proto/src/components",
 		"/Users/rich/Development/Luxe/frogTiles/proto/src/entities",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/states",
 		"/Users/rich/Development/Luxe/fg",
 		"/Users/rich/Development/Luxe/fg/src",
 		"/Users/rich/Development/Luxe/fg/src/components",
@@ -734,12 +758,18 @@
 		"/Users/rich/haxelib/luxe",
 		"/Users/rich/haxelib/luxe/git",
 		"/Users/rich/haxelib/luxe/git/luxe",
-		"/Users/rich/haxelib/luxe/git/luxe/importers",
 		"/Users/rich/haxelib/luxe/git/luxe/importers/tiled",
-		"/Users/rich/haxelib/luxe/git/luxe/tilemaps"
+		"/Users/rich/haxelib/luxe/git/luxe/tilemaps",
+		"/Users/rich/haxelib/luxe/git/samples",
+		"/Users/rich/haxelib/luxe/git/samples/alphas",
+		"/Users/rich/haxelib/luxe/git/samples/alphas/1_0_parrott",
+		"/Users/rich/haxelib/luxe/git/samples/alphas/1_0_parrott/src",
+		"/Users/rich/haxelib/luxe/git/samples/alphas/2_0_0010",
+		"/Users/rich/haxelib/luxe/git/samples/alphas/2_0_0010/src"
 	],
 	"file_history":
 	[
+		"/Users/rich/Development/Luxe/frogTiles/proto/Main.hx",
 		"/Users/rich/Development/Luxe/frogTiles/proto/src/components/LevelModel.hx",
 		"/Users/rich/haxelib/luxe/git/luxe/Events.hx",
 		"/Users/rich/haxelib/luxe/git/luxe/options/TilemapOptions.hx",
@@ -747,7 +777,6 @@
 		"/Users/rich/haxelib/luxe/git/luxe/tilemaps/Tilemap.hx",
 		"/Users/rich/Development/Luxe/fg/src/components/MechAnimation.hx",
 		"/Users/rich/Development/Luxe/frogTiles/proto/src/Main.hx",
-		"/Users/rich/Development/Luxe/frogTiles/proto/Main.hx",
 		"/Users/rich/Development/Luxe/fg/src/Main.hx",
 		"/Users/rich/Development/OpenFramworks/apps/piApps/liveShader/src/FaceOverlay.h",
 		"/Users/rich/Development/OpenFramworks/apps/piApps/liveShader/bin/data/ShaderPlayground.frag",
@@ -895,6 +924,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"(.*)—(.*)",
+			"using",
+			"_debug(",
 			"exitBlockId",
 			"mobileInput",
 			"fire(",
@@ -1019,17 +1051,16 @@
 			"size",
 			"remove",
 			"reroll",
-			"arra",
-			"FlxGraphicAsset",
-			"hideSystemUiCallback",
-			"Float"
+			"arra"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"$2 - $1",
+			"$2 $1",
 			"model",
 			"level_model",
 			"prediction",
@@ -1065,7 +1096,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1074,15 +1105,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 480,
+						"buffer_size": 500,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								277,
-								277
+								431,
+								431
 							]
 						],
 						"settings":
@@ -1098,10 +1129,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 130.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1129,13 +1160,15 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage"
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1144,15 +1177,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7956,
+						"buffer_size": 2496,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3824,
-								3824
+								570,
+								570
 							]
 						],
 						"settings":
@@ -1167,11 +1200,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 7.0,
-						"translation.y": 4117.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1180,15 +1213,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4648,
+						"buffer_size": 5266,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1308,
-								1308
+								3292,
+								3292
 							]
 						],
 						"settings":
@@ -1204,33 +1237,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 114.0,
+						"translation.y": 1775.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"file": "assets/mapSprites.png",
-					"semi_transient": false,
-					"stack_index": 4,
-					"type": "image"
-				},
-				{
 					"buffer": 4,
-					"file": "/Users/rich/Development/Luxe/fg/src/Main.hx",
+					"file": "/Users/rich/haxelib/luxe/git/luxe/tilemaps/Tilemap.hx",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 4896,
+						"buffer_size": 26259,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1173,
-								1213
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1246,11 +1273,121 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 684.0,
+						"translation.y": 10603.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/states/Mode1.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2452,
+								2452
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2814.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/rich/haxelib/luxe/git/luxe/States.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								816,
+								816
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 384.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/entities/HUD.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1284,
+								1284
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"glslvalidator_configured": true,
+							"glslvalidator_enabled": 1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 809.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"file": "assets/mapSprites.png",
+					"semi_transient": false,
+					"stack_index": 6,
+					"type": "image"
 				}
 			]
 		}
@@ -1288,7 +1425,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 96.0
+		"height": 283.0
 	},
 	"output.find_results":
 	{

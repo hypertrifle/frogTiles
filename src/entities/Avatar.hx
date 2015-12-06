@@ -11,7 +11,7 @@ class Avatar extends Entity {
   override function init(){
 
   	var image = Luxe.resources.texture('assets/frog.png');
-  	display = new Sprite( {texture:image,pos: new Vector( 0,0 ),depth : 4});
+  	display = new Sprite( {centered: false, texture:image,pos: new Vector( 0,0 ),depth : 4});
   	Luxe.events.fire("debug.avatar.init");
 
 

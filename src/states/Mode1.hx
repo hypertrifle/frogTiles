@@ -20,6 +20,7 @@ import luxe.importers.tiled.TiledObjectGroup;
 import luxe.tilemaps.Tilemap;
 import phoenix.Texture.FilterType;
 
+import luxe.tween.Actuate;
 
 typedef MobileControls = { 
     @:optional var touchLeft:Bool;
@@ -32,8 +33,11 @@ typedef MobileControls = {
 
 class Mode1 extends State {
 
-	public static var models:Entity;
-	public static var level_model:LevelModel;
+	public static var map:Entity;
+  public static var level_model:LevelModel;
+	public static var map_view:MapView;
+
+  public static var step_time:Float  = 0.2;
 	public var inputDone:Bool = false;
 
 	public var hud:HUD;
@@ -43,12 +47,10 @@ class Mode1 extends State {
 	public var timerRunning:Bool = false;
 	public var time:Float = 0;
 
-	public var levelProgress = 0;
-
 	public var mobileInput:MobileControls;
 
 	//The level tiles
-	var map: TiledMap;
+	var map_tiled: TiledMap;
 	var map_scale: Float = 1;
 
 	var avatar:Avatar;
@@ -68,20 +70,28 @@ class Mode1 extends State {
   	setup_mobile_input();
   	setup_events();
 
-  	models = new Entity();
-  	level_model = new LevelModel({name:"level-model"});
-  	models.add(level_model);
+    //lets create our map,
+  	map = new Entity();
 
+    // add our level model and our custom map view
+    level_model = new LevelModel({name:"level-model"});
+  	map_view = new MapView({name:"map-view"});
 
+    //add them to the entity
+    map.add(level_model);
+  	map.add(map_view);
+
+    //create tmx map
   	create_map();
-  	level_model.loadModelFromMap(map);
-  	
-  	playerX = level_model.getStartPosition();
-  	trace("player Start Position: "+ playerX);
 
+    //load it into our custom model
+  	level_model.loadModelFromMap(map_tiled);
+
+    //get he player starting position.
+  	playerX = level_model.getStartPosition();
   	
-  	//playerX * map.tile_width
-  	avatar = new Avatar({name:"player",scale: new Vector(map_scale,map_scale),pos:new Vector((playerX+0.5)*64*map_scale,Luxe.screen.height - 32)});
+  	//load our Protaganist.
+  	avatar = new Avatar({name:"player",scale: new Vector(map_scale,map_scale),pos:new Vector((playerX)*64*map_scale,Luxe.screen.height - 64)});
 
 
 
@@ -93,8 +103,8 @@ class Mode1 extends State {
 
   	//destroy stuffs
   	avatar.destroy();
-  	models.destroy();
   	map.destroy();
+  	map_tiled.destroy();
   }
 
 
@@ -126,47 +136,21 @@ class Mode1 extends State {
   }
 
   function create_map() {
-
-          //Fetch the loaded tmx data from the assets
+      trace(1);
+      //Fetch the loaded tmx data from the assets
       var map_data = Luxe.resources.text('assets/level1.tmx').asset.text;
-
-          //parse that data into a usable TiledMap instance
-      map = new TiledMap({ format:'tmx', tiled_file_data: map_data });
-
-      map_scale = 380 / map.total_width;
-
-      map.pos.y -= map.total_height*map_scale - 640;
-
-      //Create the tilemap visuals
-      map.display({ scale:map_scale, filter:FilterType.nearest });
-
-      for(_group in map.tiledmap_data.object_groups) {
-          for(_object in _group.objects) {
-
-              switch(_object.type) {
-
-                  case 'spawn': {
-
-                      //The spawn position is set from the map
-                      var spawn_pos = new Vector(_object.pos.x, _object.pos.y);
-
-                  } //spawn
-
-                  case 'exit': {
-
-
-                  } //exit
-              } //switch type
-          } //each object
-      } //each object group
-
-      for(layer in map.tiledmap_data.image_layers) {
-
-      } //each image_layer
-
-
       
-
+      trace(2);
+      
+      //parse that data into a usable TiledMap instance
+      map_tiled = new TiledMap({ format:'tmx', tiled_file_data: map_data });
+      trace(3);
+      
+      map_scale = Main.GAME_WIDTH / map_tiled.total_width;
+      trace(4);
+      
+      map_tiled.pos.y -= map_tiled.total_height*map_scale - Main.GAME_HEIGHT;
+      trace(5);
 
   } //create_map
 
@@ -182,7 +166,7 @@ class Mode1 extends State {
   }
 
   override function ontouchdown( event:TouchEvent ) {
-      if(event.x < 190){
+      if(event.x < Main.GAME_WIDTH/2){
           mobileInput.touchLeft = true;
           mobileInput.touchLeftID = event.touch_id;
       } else {
@@ -261,7 +245,7 @@ class Mode1 extends State {
       if(playerX== 0 && x < 0){
           //already far left
           return;
-      } else if(playerX==map.width-1 && x > 0){
+      } else if(playerX==map_tiled.width-1 && x > 0){
           //already far right
           return;
       }
@@ -270,19 +254,11 @@ class Mode1 extends State {
       playerX = playerX + x;
       level_model.step(y,(playerX));
 
-     // level_model.updateDisplay(map);
-
-      levelProgress += y;
-
-      //update visual
-      //map.pos.y = 0 - map.total_height*map_scale - 640 +(levelProgress*map.tile_height*map_scale);
-      //map.pos.y += map.tile_height*map_scale;
-      avatar.pos.y -= map.tile_height*map_scale * y;
-
-      avatar.pos.x = ((playerX)+0.5)*64*map_scale;
+      //move the avatar
+      Actuate.tween( avatar.pos, Mode1.step_time, { x: playerX*64*map_scale, y:avatar.pos.y- map_tiled.tile_height*map_scale * y } ).ease( luxe.tween.easing.Quad.easeOut );
 
       //move the camera
-      Luxe.camera.pos.y -= map.tile_height*map_scale * y;
+      Actuate.tween( Luxe.camera.pos, Mode1.step_time, {y:Luxe.camera.pos.y - map_tiled.tile_height*map_scale * y } ).ease( luxe.tween.easing.Quad.easeOut );
 
       
   }
@@ -290,12 +266,6 @@ class Mode1 extends State {
   	override function onrender() {
 
           hud.canvas.render();
-
-          /*if(debug) {
-              for(c in canvas.children) {
-                  drawc(c);
-              }
-          }*/
 
       } //onrender
 

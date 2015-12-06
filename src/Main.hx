@@ -23,7 +23,10 @@ import phoenix.Texture.FilterType;
 class Main extends luxe.Game {
 
     public static var states:States;
-    public static var debug_events_to_ignore:Array<String> = ["model","input","landed.tile"];
+    public static var debug_events_to_ignore:Array<String> = [];//["model","input","landed.tile"];
+
+    public static var GAME_WIDTH:Int;
+    public static var GAME_HEIGHT:Int;
 
     override function config(config:luxe.AppConfig) {
 
@@ -33,10 +36,10 @@ class Main extends luxe.Game {
 
         //load textures and texts
         config.preload.textures.push({id:'assets/mapSprites.png'});
-        config.preload.textures.push({id:'assets/mapSpritesNew.png'});
         config.preload.textures.push({id:'assets/frog.png'});
         config.preload.texts.push({id:'assets/level1.tmx'});
         config.preload.texts.push({id:'assets/level2.tmx'});
+        config.preload.jsons.push({id:'assets/tiles.json'});
         
 
         return config;
@@ -44,6 +47,8 @@ class Main extends luxe.Game {
     } //config
 
     override function ready() {
+        Main.GAME_HEIGHT = Luxe.screen.h;
+        Main.GAME_WIDTH = Luxe.screen.w;
 
         Luxe.renderer.clear_color.rgb(0x0a195c);
 
@@ -53,6 +58,7 @@ class Main extends luxe.Game {
 
        states = new States({name:'states'});
        states.add(new states.Mode1({name:"mode1"}));
+
 
 
 
@@ -91,7 +97,12 @@ class Main extends luxe.Game {
                     }
                 }
 
-                trace("E: "+e._event_name_+ " | " +haxe.Json.stringify(e));
+                try {
+                        //trace("E: "+e._event_name_+ " | " +haxe.Json.stringify(e));
+                    } catch(msg : String){
+
+                    }
+                
         });
     }
 

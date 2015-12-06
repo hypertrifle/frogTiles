@@ -3,15 +3,17 @@
 	[
 		{
 			"path": "."
+		},{
+			"path": "../platformer"
 		},
 		{
 			"path": "/Users/rich/Development/Luxe/fg"
 		},
 		{
-			"path": "/Users/rich/haxelib/luxe"
+			"path": "/Users/rich/Development/haxelib/luxe"
 		},
 		{
-			"path": "/Users/rich/haxelib/snow"
+			"path": "/Users/rich/Development/haxelib/snow"
 		}
 	]
 }
