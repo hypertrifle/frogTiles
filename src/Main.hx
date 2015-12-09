@@ -58,8 +58,9 @@ class Main extends luxe.Game {
 
        states = new States({name:'states'});
        states.add(new states.Mode1({name:"mode1"}));
+       states.add(new states.MenuState({name:"menu"}));
 
-
+       Luxe.events.fire("game.states.switch",{newstate:"menu"});
 
 
     } //ready
@@ -78,6 +79,20 @@ class Main extends luxe.Game {
         }
 
     } //onkeyup
+
+
+    //required if we wish to use mouse functions deeper in the project
+    override function onmousemove(e) {
+
+    } //onmousemove
+
+    override function onmouseup(e) {
+    }
+
+    override function onmousedown(e) {
+
+    }
+
 
     function setup_global_listeners(){
         Luxe.events.listen("game.states.switch", function(e) {

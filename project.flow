@@ -25,6 +25,10 @@
       dependencies : {
         luxe : '*',
         mint : '*',
+      },
+      android : {
+          sdk : '/Users/rich/Library/Android/sdk',
+          ant_path : '/Users/rich/Library/Android/sdk/tools/ant'
       }
     },
 

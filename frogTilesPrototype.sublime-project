@@ -10,10 +10,13 @@
 			"path": "/Users/rich/Development/Luxe/fg"
 		},
 		{
-			"path": "/Users/rich/Development/haxelib/luxe"
+			"path": "/Users/rich/Development/haxelib/luxe/git", "name":"LUXE"
 		},
 		{
-			"path": "/Users/rich/Development/haxelib/snow"
+			"path": "/Users/rich/Development/haxelib/snow/git", "name":"SNOW"
+		},
+		{
+			"path": "/Users/rich/Development/haxelib/mint/git", "name":"MINT"
 		}
 	]
 }
