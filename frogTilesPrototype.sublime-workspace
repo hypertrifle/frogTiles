@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"Tile",
+				"TiledMap"
+			],
+			[
+				"ma",
+				"map_scale"
+			],
+			[
+				"update",
+				"update_map_logic"
+			],
+			[
+				"a",
+				"p· Actuate	Actuate"
+			],
+			[
+				"t",
+				"p· tween	package"
+			],
+			[
+				"sc",
+				"p· screen	luxe.Screen"
+			],
+			[
+				"c",
+				"p· ComponentOptions	ComponentOptions"
+			],
+			[
+				"map",
+				"map_texture"
+			],
+			[
 				"vis",
 				"visual"
 			],
@@ -38,14 +70,6 @@
 			[
 				"lel",
 				"level_model"
-			],
-			[
-				"map",
-				"map"
-			],
-			[
-				"t",
-				"p· touchLeftID	Null<Int>"
 			],
 			[
 				"tile",
@@ -168,10 +192,6 @@
 				"background-color"
 			],
 			[
-				"ma",
-				"max-height"
-			],
-			[
 				"phasergame",
 				"phaser-game"
 			],
@@ -242,10 +262,6 @@
 			[
 				"Spri",
 				"Sprite	luxe"
-			],
-			[
-				"sc",
-				"screen	luxe.Screen"
 			],
 			[
 				"Input",
@@ -356,10 +372,6 @@
 				"addPlayerText"
 			],
 			[
-				"update",
-				"updateVisuals	function"
-			],
-			[
 				"POS",
 				"Position	helpers"
 			],
@@ -410,10 +422,6 @@
 			[
 				"_quest",
 				"_questionDisplay	var"
-			],
-			[
-				"a",
-				"adFrequencyInSeconds	Int"
 			],
 			[
 				"_bg",
@@ -506,80 +514,16 @@
 			[
 				"QuestionDis",
 				"QuestionsDisplayItem	class"
-			],
-			[
-				"to",
-				"toUpperCase()	String"
-			],
-			[
-				"con",
-				"confimCallback	var"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "project.flow",
-			"settings":
-			{
-				"buffer_size": 500,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/entities/Avatar.hx",
-			"settings":
-			{
-				"buffer_size": 459,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Main.hx",
-			"settings":
-			{
-				"buffer_size": 2496,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/LevelModel.hx",
-			"settings":
-			{
-				"buffer_size": 5266,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/rich/haxelib/luxe/git/luxe/tilemaps/Tilemap.hx",
-			"settings":
-			{
-				"buffer_size": 26259,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "src/states/Mode1.hx",
 			"settings":
 			{
-				"buffer_size": 6888,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/rich/haxelib/luxe/git/luxe/States.hx",
-			"settings":
-			{
-				"buffer_size": 17443,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/entities/HUD.hx",
-			"settings":
-			{
-				"buffer_size": 1829,
+				"buffer_size": 6335,
 				"line_ending": "Unix"
 			}
 		}
@@ -750,33 +694,35 @@
 		"/Users/rich/Development/Luxe/frogTiles/proto/src/components",
 		"/Users/rich/Development/Luxe/frogTiles/proto/src/entities",
 		"/Users/rich/Development/Luxe/frogTiles/proto/src/states",
-		"/Users/rich/Development/Luxe/fg",
-		"/Users/rich/Development/Luxe/fg/src",
-		"/Users/rich/Development/Luxe/fg/src/components",
-		"/Users/rich/Development/Luxe/fg/src/entities",
-		"/Users/rich/Development/Luxe/fg/src/states",
-		"/Users/rich/haxelib/luxe",
-		"/Users/rich/haxelib/luxe/git",
-		"/Users/rich/haxelib/luxe/git/luxe",
-		"/Users/rich/haxelib/luxe/git/luxe/importers/tiled",
-		"/Users/rich/haxelib/luxe/git/luxe/tilemaps",
-		"/Users/rich/haxelib/luxe/git/samples",
-		"/Users/rich/haxelib/luxe/git/samples/alphas",
-		"/Users/rich/haxelib/luxe/git/samples/alphas/1_0_parrott",
-		"/Users/rich/haxelib/luxe/git/samples/alphas/1_0_parrott/src",
-		"/Users/rich/haxelib/luxe/git/samples/alphas/2_0_0010",
-		"/Users/rich/haxelib/luxe/git/samples/alphas/2_0_0010/src"
+		"/Users/rich/Development/Luxe/frogTiles/platformer",
+		"/Users/rich/Development/Luxe/frogTiles/platformer/src",
+		"/Users/rich/Development/haxelib/luxe",
+		"/Users/rich/Development/haxelib/luxe/git",
+		"/Users/rich/Development/haxelib/luxe/git/luxe",
+		"/Users/rich/Development/haxelib/luxe/git/luxe/components"
 	],
 	"file_history":
 	[
-		"/Users/rich/Development/Luxe/frogTiles/proto/Main.hx",
 		"/Users/rich/Development/Luxe/frogTiles/proto/src/components/LevelModel.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/entities/MapTile.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/options/RSTileOptions.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/components/MapView.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/Main.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/assets/tiles.json",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/entities/Avatar.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/project.flow",
+		"/Users/rich/Development/Luxe/frogTiles/proto/assets/mapSprites.png",
+		"/Users/rich/Development/haxelib/luxe/git/luxe/options/SpriteOptions.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/frogTilesPrototype.sublime-project",
+		"/Users/rich/Development/haxelib/luxe/git/luxe/Sprite.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/src/entities/HUD.hx",
+		"/Users/rich/haxelib/luxe/git/luxe/States.hx",
+		"/Users/rich/Development/Luxe/frogTiles/proto/Main.hx",
 		"/Users/rich/haxelib/luxe/git/luxe/Events.hx",
 		"/Users/rich/haxelib/luxe/git/luxe/options/TilemapOptions.hx",
 		"/Users/rich/haxelib/luxe/git/luxe/importers/tiled/TiledMap.hx",
 		"/Users/rich/haxelib/luxe/git/luxe/tilemaps/Tilemap.hx",
 		"/Users/rich/Development/Luxe/fg/src/components/MechAnimation.hx",
-		"/Users/rich/Development/Luxe/frogTiles/proto/src/Main.hx",
 		"/Users/rich/Development/Luxe/fg/src/Main.hx",
 		"/Users/rich/Development/OpenFramworks/apps/piApps/liveShader/src/FaceOverlay.h",
 		"/Users/rich/Development/OpenFramworks/apps/piApps/liveShader/bin/data/ShaderPlayground.frag",
@@ -884,19 +830,7 @@
 		"/Users/rich/Development/Haxe/zenhotseat/Release/source/states/PlayState.hx",
 		"/Users/rich/Development/Haxe/zenhotseat/Release/Project.xml",
 		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/PlayerDisplay.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/android-source/GameActivityNew.java",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/android-source/GameActivity.java",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/export/android/bin/src/org/haxe/lime/GameActivity.java",
-		"/Users/rich/Development/scripts/getRepos.sh",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/stat/HSColors.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/QuestionDisplay.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/states/ZenState.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/android-source/AndroidManifest.xml",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/Release.sublime-project",
-		"/Users/rich/haxelib/openfl-admob/1,3,4/dependencies/admobex/src/admobex/AdMobEx.java",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/export/android/bin/AndroidManifest.xml",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/states/SplashState.hx",
-		"/Users/rich/Development/Haxe/zenhotseat/Release/source/ui/Modal.hx"
+		"/Users/rich/Development/Haxe/zenhotseat/Release/android-source/GameActivityNew.java"
 	],
 	"find":
 	{
@@ -924,6 +858,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"updateDisplay",
+			"levelProgress",
 			"(.*)—(.*)",
 			"using",
 			"_debug(",
@@ -1049,9 +985,7 @@
 			")});\n",
 			"Haxe.timer",
 			"size",
-			"remove",
-			"reroll",
-			"arra"
+			"remove"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1096,238 +1030,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "project.flow",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 500,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								431,
-								431
-							]
-						],
-						"settings":
-						{
-							"colorcode": true,
-							"glslvalidator_configured": true,
-							"glslvalidator_enabled": 1,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/sublime_flow/flow-file.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 130.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/entities/Avatar.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 459,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								448,
-								448
-							]
-						],
-						"settings":
-						{
-							"colorcode": true,
-							"glslvalidator_configured": true,
-							"glslvalidator_enabled": 1,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/Main.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2496,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								570,
-								570
-							]
-						],
-						"settings":
-						{
-							"colorcode": true,
-							"glslvalidator_configured": true,
-							"glslvalidator_enabled": 1,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/components/LevelModel.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5266,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3292,
-								3292
-							]
-						],
-						"settings":
-						{
-							"colorcode": true,
-							"glslvalidator_configured": true,
-							"glslvalidator_enabled": 1,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1775.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Users/rich/haxelib/luxe/git/luxe/tilemaps/Tilemap.hx",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 26259,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"colorcode": true,
-							"glslvalidator_configured": true,
-							"glslvalidator_enabled": 1,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 10603.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "src/states/Mode1.hx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6888,
+						"buffer_size": 6335,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2452,
-								2452
-							]
-						],
-						"settings":
-						{
-							"colorcode": true,
-							"glslvalidator_configured": true,
-							"glslvalidator_enabled": 1,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2814.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/Users/rich/haxelib/luxe/git/luxe/States.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17443,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								816,
-								816
+								2174,
+								2174
 							]
 						],
 						"settings":
@@ -1339,55 +1059,15 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 384.0,
+						"translation.y": 1887.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 0,
 					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/entities/HUD.hx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1829,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1284,
-								1284
-							]
-						],
-						"settings":
-						{
-							"colorcode": true,
-							"glslvalidator_configured": true,
-							"glslvalidator_enabled": 1,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 809.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"file": "assets/mapSprites.png",
-					"semi_transient": false,
-					"stack_index": 6,
-					"type": "image"
 				}
 			]
 		}

@@ -11,6 +11,8 @@ class MapTile extends Sprite {
   public var uid:Int;
   public var tile_id:Int;
 
+  public var wrap_sprite:Sprite;
+
   override public function new( options:RSTileOptions ) {
 
   	//default sprite options.

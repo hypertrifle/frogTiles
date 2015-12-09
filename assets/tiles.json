@@ -39,5 +39,10 @@
         "frameset": ["7"],
         "loop": "false",
         "speed": "1"
+    } ,"8" : {
+        "frame_size":{ "x":"64", "y":"64" },
+        "frameset": ["8"],
+        "loop": "false",
+        "speed": "1"
     } 
 }

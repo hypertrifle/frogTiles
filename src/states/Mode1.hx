@@ -82,7 +82,9 @@ class Mode1 extends State {
   	map.add(map_view);
 
     //create tmx map
-  	create_map();
+  	map_tiled = create_map();
+
+    //create_map_old();
 
     //load it into our custom model
   	level_model.loadModelFromMap(map_tiled);
@@ -104,7 +106,6 @@ class Mode1 extends State {
   	//destroy stuffs
   	avatar.destroy();
   	map.destroy();
-  	map_tiled.destroy();
   }
 
 
@@ -135,23 +136,28 @@ class Mode1 extends State {
 
   }
 
-  function create_map() {
-      trace(1);
+  function create_map():TiledMap {
       //Fetch the loaded tmx data from the assets
       var map_data = Luxe.resources.text('assets/level1.tmx').asset.text;
-      
-      trace(2);
-      
-      //parse that data into a usable TiledMap instance
-      map_tiled = new TiledMap({ format:'tmx', tiled_file_data: map_data });
-      trace(3);
-      
-      map_scale = Main.GAME_WIDTH / map_tiled.total_width;
-      trace(4);
-      
-      map_tiled.pos.y -= map_tiled.total_height*map_scale - Main.GAME_HEIGHT;
-      trace(5);
 
+      //parse that data into a usable TiledMap instance
+      var tmxmap = new TiledMap({ format:'tmx', tiled_file_data: map_data });
+
+      map_scale = Main.GAME_WIDTH / tmxmap.total_width;
+      
+      return tmxmap;
+
+  } //create_map
+
+  function create_map_old() {
+      //Fetch the loaded tmx data from the assets
+      var map_data = Luxe.resources.text('assets/level1.tmx').asset.text;
+
+      //parse that data into a usable TiledMap instance
+      var map_tiled = new TiledMap({ format:'tmx', tiled_file_data: map_data });
+
+      map_scale = Main.GAME_WIDTH / map_tiled.total_width;
+      
   } //create_map
 
 

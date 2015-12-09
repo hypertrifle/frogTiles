@@ -29,7 +29,7 @@ class LevelModel extends Component {
 	    super(options);
 
         //hardcoded safe tile index
-        safeTileIndexs = [2,3,4,5,6,7,8];
+        safeTileIndexs = [2,3,4,5,6,7];
 
     } //new
 
@@ -98,6 +98,9 @@ class LevelModel extends Component {
 
             //move second logs along
            move_row_containing_id(4,true);
+
+           //swap our swapping tiles
+           alternate_tile_properties(7,8);
         }
 
         Luxe.events.fire("game.level.updated",{level:level, progress:currentProgress});
@@ -126,6 +129,30 @@ class LevelModel extends Component {
 
             }
         }
+    }
+
+    function alternate_tile_properties(id1:Int, id2:Int){
+        for(i in 0 ... level.length){
+            var firstModel:TileModel = null; var firstIndex:Int = -1;
+            var secondModel:TileModel = null; var secondIndex:Int = -1;
+            for(j in 0...level[i].length){
+                if(level[i][j].id == id1){
+                    firstModel = level[i][j];
+                } else if(level[i][j].id == id2){
+                    secondModel = level[i][j];
+                }
+            }
+
+            if(firstModel != null && secondModel != null){
+                trace("found tiles to swap");
+                //we have a row with our two tiles, lets swap them
+                level[i][firstIndex] = secondModel;
+                level[i][secondIndex] = firstModel;
+
+
+            }
+        }
+
     }
 
 
