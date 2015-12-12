@@ -22,6 +22,8 @@ import phoenix.Texture.FilterType;
 
 import luxe.tween.Actuate;
 
+import luxe.options.StateOptions;
+
 typedef MobileControls = { 
     @:optional var touchLeft:Bool;
     @:optional var touchRight:Bool;
@@ -33,9 +35,9 @@ typedef MobileControls = {
 
 class Mode1 extends State {
 
-	public static var map:Entity;
-  public static var level_model:LevelModel;
-	public static var map_view:MapView;
+	public var map:Entity;
+  public var level_model:LevelModel;
+	public var map_view:MapView;
 
   public static var step_time:Float  = 0.2;
 	public var inputDone:Bool = false;
@@ -55,6 +57,16 @@ class Mode1 extends State {
 
 	var avatar:Avatar;
 
+  override public function new(options:StateOptions){
+    super(options);
+
+
+    setup_input();
+    setup_mobile_input();
+    setup_events();
+
+  }
+
 
   override function init(){
 
@@ -62,13 +74,12 @@ class Mode1 extends State {
   }//init
 
   override function onenter<T>(_:T) {
+
+    trace(_);
   	hud = new HUD();
   	Luxe.events.fire("game.state.enterMode1",{});
   	Luxe.camera.pos.y = 0;
 
-  	setup_input();
-  	setup_mobile_input();
-  	setup_events();
 
     //lets create our map,
   	map = new Entity();
@@ -82,7 +93,7 @@ class Mode1 extends State {
   	map.add(map_view);
 
     //create tmx map
-  	map_tiled = create_map();
+  	map_tiled = create_map("level1.tmx");
 
     //create_map_old();
 
@@ -104,8 +115,16 @@ class Mode1 extends State {
   	Luxe.events.fire("game.state.leavemode1",{});
 
   	//destroy stuffs
+    trace("destry avatar");
+    // /avatar = null;
+
   	avatar.destroy();
+    trace("destry map");
+
   	map.destroy();
+    trace("destry hud");
+
+    hud.destroy();
   }
 
 
@@ -136,9 +155,9 @@ class Mode1 extends State {
 
   }
 
-  function create_map():TiledMap {
+  function create_map(mapName:String):TiledMap {
       //Fetch the loaded tmx data from the assets
-      var map_data = Luxe.resources.text('assets/level1.tmx').asset.text;
+      var map_data = Luxe.resources.text('assets/'+mapName).asset.text;
 
       //parse that data into a usable TiledMap instance
       var tmxmap = new TiledMap({ format:'tmx', tiled_file_data: map_data });
@@ -172,6 +191,8 @@ class Mode1 extends State {
   }
 
   override function ontouchdown( event:TouchEvent ) {
+      if(!active) return;
+
       if(event.x < Main.GAME_WIDTH/2){
           mobileInput.touchLeft = true;
           mobileInput.touchLeftID = event.touch_id;
@@ -184,6 +205,7 @@ class Mode1 extends State {
   }
       /** Called for you when a touch is released, use the `touch_id` to track which */
   override function ontouchup( event:TouchEvent ) {
+      if(!active) return;
       if(event.touch_id == mobileInput.touchLeftID){
           mobileInput.touchLeft = false;
       }else if(event.touch_id == mobileInput.touchLeftID){
@@ -215,6 +237,7 @@ class Mode1 extends State {
   }//update
 
   function update_input(dt:Float) {
+      if(!active) return;
 
       if(!timerRunning && (Luxe.input.inputdown('left') || Luxe.input.inputdown('right'))){
           timerRunning = true;

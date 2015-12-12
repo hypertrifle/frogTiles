@@ -28,6 +28,12 @@ class MenuState extends State {
 	public var layout: Margins;
 	public var focus: Focus;
 
+	public var story_progress:Int = 3;
+
+	static var GRID_WIDTH:Int = 4;
+	static var GRID_HEIGHT:Int = 4;
+	static var GRID_PADDING_RATIO:Float = 0.31; // this is the golden ratio / 2;
+
 
 
   override public function new(options:StateOptions){
@@ -88,15 +94,34 @@ class MenuState extends State {
   	//when this state is loaded
   	trace("loading menustate");
 
-  	new mint.Button({
-  	    parent: canvas,
-  	    name: 'level1',
-  	    x: 76, y: 52, w: 32, h: 32,
-  	    text: 'O',
-  	    options: { color_hover: new Color().rgb(0xf6007b) },
-  	    text_size: 16,
-  	    onclick: function(e,c) {trace('mint button! ${Luxe.time}' );}
-  	});
+
+  	var button_width = Luxe.screen.w / (GRID_WIDTH + GRID_WIDTH*GRID_PADDING_RATIO + GRID_PADDING_RATIO);
+  	var text_height = Math.floor(button_width*GRID_PADDING_RATIO*2);
+
+  	for(i in 0...GRID_WIDTH*GRID_HEIGHT){
+  		var x = i%GRID_WIDTH;
+  		var y = Math.floor(i/GRID_WIDTH);
+
+  		if(i < story_progress){
+
+  		}
+
+  		var butt = new mint.Button({
+  		    parent: canvas,
+  		    name: 'level'+i,
+  		    x: button_width*GRID_PADDING_RATIO + (x*button_width*(1+GRID_PADDING_RATIO)), y: button_width*GRID_PADDING_RATIO + (y*button_width*(1+GRID_PADDING_RATIO)), w: button_width, h: button_width,
+  		    text: ''+(i+1),
+  		    options: { color_hover: new Color().rgb(0xf6007b) },
+  		    text_size: text_height,
+  		    onclick: function(e,c:Control) {Luxe.events.fire("menu.click."+c.name);}
+  		});
+
+  		var _render:mint.render.luxe.Button = cast butt.renderer;
+  		//_render.button.label.font = Luxe.resources.font('assets/fontAwesome64.fnt');
+
+  	}
+
+  	
 
   	//lets add some stuff
  }

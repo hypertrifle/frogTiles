@@ -125,4 +125,16 @@ class MapView extends Component {
         //called when the scene starts or restarts
     }
 
+    override function ondestroy() {
+        //called when the entity is destroyed
+        while(tiles.length > 0){
+
+            var t = tiles.pop();
+            t.destroy();
+            t = null;
+        }
+
+
+    }
+
 }

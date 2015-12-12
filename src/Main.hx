@@ -18,6 +18,8 @@ import luxe.importers.tiled.TiledObjectGroup;
 import luxe.tilemaps.Tilemap;
 import phoenix.Texture.FilterType;
 
+//import snowhxt.Snowhxt;
+
 
 
 class Main extends luxe.Game {
@@ -27,6 +29,8 @@ class Main extends luxe.Game {
 
     public static var GAME_WIDTH:Int;
     public static var GAME_HEIGHT:Int;
+
+    //var shxt : Snowhxt;
 
     override function config(config:luxe.AppConfig) {
 
@@ -40,6 +44,7 @@ class Main extends luxe.Game {
         config.preload.texts.push({id:'assets/level1.tmx'});
         config.preload.texts.push({id:'assets/level2.tmx'});
         config.preload.jsons.push({id:'assets/tiles.json'});
+        config.preload.fonts.push({ id : 'assets/fontAwesome64.fnt' });
         
 
         return config;
@@ -47,6 +52,9 @@ class Main extends luxe.Game {
     } //config
 
     override function ready() {
+        //our link to hxscout
+        //shxt = new Snowhxt();
+
         Main.GAME_HEIGHT = Luxe.screen.h;
         Main.GAME_WIDTH = Luxe.screen.w;
 
@@ -60,7 +68,7 @@ class Main extends luxe.Game {
        states.add(new states.Mode1({name:"mode1"}));
        states.add(new states.MenuState({name:"menu"}));
 
-       Luxe.events.fire("game.states.switch",{newstate:"menu"});
+       //Luxe.events.fire("game.states.switch",{newstate:"menu"});
 
 
     } //ready
@@ -73,7 +81,7 @@ class Main extends luxe.Game {
         } else if(e.keycode == Key.key_r){
 
            
-            Luxe.events.fire("game.states.switch",{newstate:"mode1"});
+            Luxe.events.fire("game.states.switch",{newstate:"mode1", params: {map:"level1.tmx"}});
            
 
         }
@@ -96,7 +104,12 @@ class Main extends luxe.Game {
 
     function setup_global_listeners(){
         Luxe.events.listen("game.states.switch", function(e) {
+            if(e.params){
+                Main.states.set(e.newstate,e.params);
+            } else {
                 Main.states.set(e.newstate);
+
+            }
 
             });
     }
@@ -123,6 +136,7 @@ class Main extends luxe.Game {
 
 
     override function update(dt:Float) {
+        //shxt.update();
         super.update(dt);
     	
     } //update

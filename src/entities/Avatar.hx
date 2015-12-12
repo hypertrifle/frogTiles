@@ -25,7 +25,6 @@ class Avatar extends Entity {
 
   override function ondestroy(){
     display.destroy();
-    super.destroy();
   }
 
 }//Avatar
