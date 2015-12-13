@@ -44,7 +44,7 @@ class Main extends luxe.Game {
         config.preload.texts.push({id:'assets/level1.tmx'});
         config.preload.texts.push({id:'assets/level2.tmx'});
         config.preload.jsons.push({id:'assets/tiles.json'});
-        config.preload.fonts.push({ id : 'assets/fontAwesome64.fnt' });
+        config.preload.fonts.push({ id : 'assets/awesome-futura.fnt' });
         
 
         return config;
@@ -68,7 +68,7 @@ class Main extends luxe.Game {
        states.add(new states.Mode1({name:"mode1"}));
        states.add(new states.MenuState({name:"menu"}));
 
-       //Luxe.events.fire("game.states.switch",{newstate:"menu"});
+       Luxe.events.fire("game.states.switch",{newstate:"menu"});
 
 
     } //ready

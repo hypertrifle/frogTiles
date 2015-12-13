@@ -96,7 +96,7 @@ class MenuState extends State {
 
 
   	var button_width = Luxe.screen.w / (GRID_WIDTH + GRID_WIDTH*GRID_PADDING_RATIO + GRID_PADDING_RATIO);
-  	var text_height = Math.floor(button_width*GRID_PADDING_RATIO*2);
+  	var text_height = Math.floor(button_width*GRID_PADDING_RATIO);
 
   	for(i in 0...GRID_WIDTH*GRID_HEIGHT){
   		var x = i%GRID_WIDTH;
@@ -110,16 +110,16 @@ class MenuState extends State {
   		    parent: canvas,
   		    name: 'level'+i,
   		    x: button_width*GRID_PADDING_RATIO + (x*button_width*(1+GRID_PADDING_RATIO)), y: button_width*GRID_PADDING_RATIO + (y*button_width*(1+GRID_PADDING_RATIO)), w: button_width, h: button_width,
-  		    text: ''+(i+1),
+  		    text: '',
   		    options: { color_hover: new Color().rgb(0xf6007b) },
   		    text_size: text_height,
   		    onclick: function(e,c:Control) {Luxe.events.fire("menu.click."+c.name);}
   		});
 
-  		var _render:mint.render.luxe.Button = cast butt.renderer;
-  		//_render.button.label.font = Luxe.resources.font('assets/fontAwesome64.fnt');
 
   	}
+  	//var newFont:phoenix.BitmapFont = Luxe.resources.font('assets/awesome-futura.fnt');
+  	//var textTest:luxe.Text = new luxe.Text({text:"", font:newFont });
 
   	
 
